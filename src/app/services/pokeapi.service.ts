@@ -25,8 +25,8 @@ export class PokeapiService {
       }
     }
     return this.http.get(url).pipe(map((pokemon: Pokemon) => {
-      const name = pokemon.name;
-      return name;
+      // console.log(pokemon);
+      return pokemon;
 
     }));
   }

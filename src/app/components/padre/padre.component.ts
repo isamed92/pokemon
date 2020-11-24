@@ -12,15 +12,20 @@ export class PadreComponent implements OnInit {
   pokemon: Pokemon = new Pokemon();
 
   constructor(public _pokeService: PokeapiService) {
-    this.getPokemon();
-   }
-
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    this.getPokemon();
+  }
+
+
+
   getPokemon(){
-    return this._pokeService.getPokeInfo(null, 2).subscribe(
-      data => console.log(data)
+    return this._pokeService.getPokeInfo(null, 639).subscribe(
+      data => {
+        this.pokemon = data;
+        console.log(this.pokemon);
+      }
     );
   }
 
